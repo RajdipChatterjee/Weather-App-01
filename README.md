@@ -3,7 +3,7 @@
 A lightweight, single-page web app that fetches real-time weather data using the OpenWeatherMap free API. Built with vanilla HTML, CSS, and JavaScript—no frameworks needed!
 
 ## 📱 Demo
-Check out the live version: [🔗 Live Demo](https://your-weather-app.netlify.app)
+Check out the live version: [🔗 Live Demo](https://rajdipchatterjee.github.io/Weather-App-01/)
 
 ## ✨ Features
 - 🌤️ Search weather by city name
