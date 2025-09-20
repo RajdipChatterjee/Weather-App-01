@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded',() => {
         const city = cityInput.value.trim();
         if(!city) return;
 
-
         // it may throw an error
         // server/database is always in another continent
 
@@ -37,12 +36,22 @@ document.addEventListener('DOMContentLoaded',() => {
         if(!response.ok) {
             throw new Error("City not found");
         }
-        const data = await response.json();
+        const data = await response.json(); 
         return data;
     }
 
-    function displayWeatherData(weatherData) {
-        console.log(weatherData);
+    function displayWeatherData(data) {
+        console.log(data.list[0]);
+        const {name, main, weather} = {...data.list[0]};
+        console.log(`${name}, ${main.temp}, ${weather[0].description}`)
+
+        cityNameDisplay.textContent = `${name}`;
+        temperatureDisplay.textContent = `Temperature: ${main.temp}`
+        descriptionDisplay.textContent = `Weather: ${weather[0].description}`
+
+        //unlock the display 
+        weatherInfo.classList.remove('hidden'); 
+        errorMessage.classList.add('hidden');
     }
 
     function showError() {
